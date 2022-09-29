@@ -8,7 +8,7 @@
         <sidenav-item
           url="/dashboard-default"
           :class="getRoute() === 'dashboard-default' ? 'active' : ''"
-          :navText="this.$store.state.isRTL ? 'لوحة القيادة' : 'Dashboard'"
+          :navText="'Dashboard'"
         >
           <template v-slot:icon>
             <i class="ni ni-tv-2 text-primary text-sm opacity-10"></i>
@@ -19,7 +19,7 @@
         <sidenav-item
           url="/tables"
           :class="getRoute() === 'tables' ? 'active' : ''"
-          :navText="this.$store.state.isRTL ? 'الجداول' : 'Tables'"
+          :navText="'Test Load'"
         >
           <template v-slot:icon>
             <i
@@ -30,23 +30,9 @@
       </li>
       <li class="nav-item">
         <sidenav-item
-          url="/billing"
-          :class="getRoute() === 'billing' ? 'active' : ''"
-          :navText="this.$store.state.isRTL ? 'الفواتیر' : 'Billing'"
-        >
-          <template v-slot:icon>
-            <i class="ni ni-credit-card text-success text-sm opacity-10"></i>
-          </template>
-        </sidenav-item>
-      </li>
-      <li class="nav-item">
-        <sidenav-item
-          url="/virtual-reality"
-          :class="getRoute() === 'virtual-reality' ? 'active' : ''"
-          :navText="
-            this.$store.state.isRTL ? 'الواقع الافتراضي' : 'Virtual Reality'
-          "
-        >
+          url="/product"
+          :class="getRoute() === 'Product' ? 'active' : ''"
+          :navText="'Product'">
           <template v-slot:icon>
             <i class="ni ni-app text-info text-sm opacity-10"></i>
           </template>
@@ -54,16 +40,17 @@
       </li>
       <li class="nav-item">
         <sidenav-item
-          url="/rtl-page"
-          :class="getRoute() === 'rtl-page' ? 'active' : ''"
-          navText="RTL"
+          url="/billing"
+          :class="getRoute() === 'billing' ? 'active' : ''"
+          :navText="'Qualification Job'"
         >
           <template v-slot:icon>
-            <i class="ni ni-world-2 text-danger text-sm opacity-10"></i>
+            <i class="ni ni-credit-card text-success text-sm opacity-10"></i>
           </template>
         </sidenav-item>
       </li>
-      <li class="mt-3 nav-item">
+      
+      <!-- <li class="mt-3 nav-item">
         <h6
           v-if="this.$store.state.isRTL"
           class="text-xs ps-4 text-uppercase font-weight-bolder opacity-6"
@@ -111,20 +98,13 @@
             <i class="ni ni-collection text-info text-sm opacity-10"></i>
           </template>
         </sidenav-item>
-      </li>
+      </li> -->
     </ul>
   </div>
-  <div class="pt-3 mx-3 mt-3 sidenav-footer">
-    <sidenav-card
-      :class="cardBg"
-      textPrimary="Need Help?"
-      textSecondary="Please check our docs"
-    />
-  </div>
+ 
 </template>
 <script>
 import SidenavItem from "./SidenavItem.vue";
-import SidenavCard from "./SidenavCard.vue";
 
 export default {
   name: "SidenavList",
@@ -133,14 +113,13 @@ export default {
   },
   data() {
     return {
-      title: "Argon Dashboard 2",
+      title: "QT Studio",
       controls: "dashboardsExamples",
       isActive: "active"
     };
   },
   components: {
     SidenavItem,
-    SidenavCard
   },
   methods: {
     getRoute() {

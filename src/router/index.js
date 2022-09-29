@@ -25,8 +25,8 @@ const routes = [
     component: Tables,
   },
   {
-    path: "/billing",
-    name: "Billing",
+    path: "/product",
+    name: "Product",
     component: Billing,
   },
   {
